@@ -20,6 +20,7 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
 import { TodayComponent } from './today/today.component';
 import { WeekComponent } from './week/week.component';
 import { MonthComponent } from './month/month.component';
+import { TomorrowComponent } from './tomorrow/tomorrow.component';
 
 export function initializeApp1(player: Player) {
   return (): Promise<any> => { 
@@ -41,7 +42,8 @@ export function initializeApp1(player: Player) {
     ProjectviewComponent,
     TodayComponent,
     WeekComponent,
-    MonthComponent
+    MonthComponent,
+    TomorrowComponent
   ],
   imports: [
     BrowserModule,

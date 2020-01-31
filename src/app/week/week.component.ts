@@ -37,8 +37,9 @@ export class WeekComponent implements OnInit {
     }
     let tempDate = tempFullDate.getDate();
 
-    this.weeksTasks = this.player.getWeeksTask(this.todaysDate,tempYear,tempMonth,tempDate);
-   
+    //this.weeksTasks = this.player.getWeeksTask(this.todaysDate,tempYear,tempMonth,tempDate);
+    this.weeksTasks = this.player.getWeeksTask();
+
   }
 
   toggleSetTask(key:number, focusEleTask){

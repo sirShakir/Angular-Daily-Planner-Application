@@ -1,6 +1,6 @@
 import { Injectable  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth } from 'date-fns';
+import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
 var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
 //var url = "/playerplanner/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
 var valueC = getCookie("gatorc");
@@ -281,7 +281,7 @@ export class Player  {
     return tasksHolder;
   }
 
-  getWeeksTask(concatDate,focusYear,focusMonth,focusDayDate){
+  OLDgetWeeksTask(concatDate,focusYear,focusMonth,focusDayDate){
     let tasksHolder = [];
 
     let startDayOfThisWeek = new Date(focusYear, focusMonth, focusDayDate);
@@ -293,9 +293,7 @@ export class Player  {
       start: startDayOfThisWeek,
       end: lastDayOfThisWeek
     });
-
     //console.log(result);
-    
     for( let y=0; y<result.length; y++){
       let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
      // console.log(formattedFocusDay);
@@ -307,6 +305,31 @@ export class Player  {
       }//end of for loop
 
     }
+
+    return tasksHolder;
+  }
+
+  getWeeksTask(){
+    let tasksHolder = [];
+    let startDate = new Date();
+    var endDate = addDays(startDate, 7);
+    var result = eachDayOfInterval({
+      start: startDate,
+      end: endDate
+    });
+
+    for( let y=0; y<result.length; y++){
+      let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
+     // console.log(formattedFocusDay);
+
+      for(let x = 0; x < this.player.tasks.length; x++){
+         if(this.player.tasks[x].due == formattedFocusDay){
+           tasksHolder.push(this.player.tasks[x]);
+         }
+      }//end of for loop
+
+    }
+
 
     return tasksHolder;
   }
