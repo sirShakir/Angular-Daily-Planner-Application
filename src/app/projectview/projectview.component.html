@@ -1,0 +1,143 @@
+
+
+<div style="overflow: auto;">
+
+  <h4>{{this.focusproject.name}}</h4>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Icon_Add_256x256.png" alt="addtask" width="42" height="42" (click)="navigate2CreateTaskProject()">Add task 
+  <img style="float:right;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/768px-More_Icon_C.svg.png
+  " alt="addtask" width="42" height="42" (click)="createSection4Project()" > 
+  <input type="text" id="sectionName" value="Add section" style="float:right;">
+  
+    
+  </div>
+  
+  <style>
+  input{
+    text-align: center;
+  }
+  .divider{
+      border-bottom-style:ridge;
+      overflow: auto;
+  }
+  .divMax{
+      height: 100%;
+      width: 100%;
+  }
+  .floatRightTHings{
+      float: right;
+  }
+  .makeInline{
+      display: inline-block;
+  }
+  .makeCenterInDiv{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .container{
+      padding: 0;
+  }
+  .fixit{
+    padding: 0;
+    border-style: none;
+  }
+  @media (min-width: 576px){
+    .container{
+        max-width: none; 
+    }     
+}
+  </style>
+  
+  
+
+<div *ngFor="let task of zeroTasks"  class="divider">   
+  
+  <div *ngIf="task.status == 'done'"  style="color: blue; opacity: .7;">
+            <h4 style="display:inline-block;" (click)="viewClickedTask(task)">{{task.name}}</h4>
+            <div class="dropdown makeInline" style="float: right;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+                  <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+                  <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+                </div>
+              </div>
+
+    </div>
+
+    <div *ngIf="task.status == 'active'">
+      <h4 style="display:inline-block;" (click)="viewClickedTask(task)">{{task.name}}</h4>
+      <div class="dropdown makeInline" style="float: right;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+            <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+            <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+          </div>
+        </div>
+      <span style="float: right;">Due : {{task.due}} Priority : {{task.level}}</span>  
+</div>
+
+</div>
+  
+  
+<div *ngFor="let section of focussections" ><br><br>
+
+
+  <div class="dropdown makeCenterInDiv">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{section.name}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <span class="dropdown-item" (click)="sectionSave(section)">Edit</span>
+      <span class="dropdown-item" (click)="sectionDelete(section)">Delete</span>
+    </div>
+  </div>
+  
+  <img (click)="navigate2CreateTaskSection(section.ID)"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png" alt="addtask" width="42" height="42">
+  
+  <div *ngFor="let task of sectionTasks" >
+
+    <div *ngIf="task.section == section.ID" class="divider">
+
+      <div *ngIf="task.status == 'done'"  style="color: blue; opacity: .7;">
+
+        <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
+        <div class="dropdown makeInline" style="float: right;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+              <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+              <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+            </div>
+        </div>
+ 
+      </div>
+
+      <div *ngIf="task.status == 'active'" >
+
+        <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
+        <div class="dropdown makeInline" style="float: right;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+              <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+              <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+            </div>
+        </div>
+        <span style="float: right;">Due : {{task.due}} Priority : {{task.level}}</span>  
+      </div>
+
+    </div>
+        
+  </div>
+
+</div>

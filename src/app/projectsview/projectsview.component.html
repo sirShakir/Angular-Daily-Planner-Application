@@ -1,0 +1,31 @@
+<p>projects all view works!</p>
+
+<style>
+.projectlisting{
+    border-style:ridge;
+    height:  15%;
+}
+img{
+    float: right;
+}
+input{
+    height: 100%;
+    width: 30%;
+    border-style: none;
+    background-color: black;
+    color: white;
+}
+</style>
+
+
+
+
+<div *ngFor="let project of allprojects" class="projectlisting">
+    <input type="text" id="{{project.name}}" value="{{project.name}}">
+    <img (click)="projectDelete(project)" src="assets/delete.png" alt="deleteproject" width="50" height="100%">
+    <img (click)="projectSaveNewName(project)" src="assets/save.png" alt="saveproject" width="50" height="100%" >
+    <img (click)="viewClickedProject(project)" src="assets/folder.png" alt="openproject" width="50" height="100%">
+</div>
+
+
+

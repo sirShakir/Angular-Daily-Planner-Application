@@ -1,0 +1,132 @@
+
+
+<style>
+    .h4center{
+        text-align: center;
+    }
+
+.divider{
+    border-bottom-style:ridge;
+    overflow: auto;
+}
+.divMax{
+    height: 100%;
+    width: 100%;
+}
+.floatRightTHings{
+    float: right;
+}
+.makeInline{
+    display: inline-block;
+}
+input {
+    display: block;
+    width: 100%;
+}
+.scription{
+    height: 100%;
+}
+.container{
+    padding: 0;
+}
+.taa{
+    display: block;
+    height: 50%;  
+    width: 100%;
+}
+.spanny{
+    display: block;
+    text-align: center;
+    height: 25%;   
+    width: 100%;
+}
+.spanny0{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+@media (min-width: 576px){
+    .container{
+        max-width: none; 
+    }     
+}
+</style>
+        
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <span class="spanny0">Name</span>
+            <input type="text" id="focusTaskname" value="{{focusTask.name}}">
+            <span class="spanny0">Due</span>
+            <input type="date" id="focusTaskdue" value="{{focusTask.due}}">
+            <span class="spanny0">Level</span>
+            <input type="number" id="focusTasklevel" value="{{focusTask.level}}">
+            <span class="spanny0">Status</span>
+            <div>{{focusTask.status}}</div>
+            <span class="spanny0">Created</span>
+            <div>{{focusTask.created}}</div>
+        </div>
+
+        <div class="col-6">
+            <span class="spanny">Description</span>
+            <textarea  type="textarea" class="taa" id="focusTaskdescription" value="{{focusTask.description}}" >
+            </textarea>
+            <img *ngIf="subToggle" (click)="navigate2CreateSubTask(focusTask.ID)"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png" alt="addtask" width="42" height="42">
+            <img style="float: right;" (click)="taskDelete(focusTask)" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Icon_delete_yellow.svg/320px-Icon_delete_yellow.svg.png" alt="deleteproject" width="50" >
+            <img *ngIf="subToggle" style="float: right;" (click)="taskSaveNewData(focusTask)" src="assets/save.png" alt="saveproject" width="50" >   
+            <img *ngIf="subToggle == false" style="float: right;" (click)="subTaskSaveNewData(focusTask)" src="assets/save.png" alt="saveproject" width="50" >   
+        </div>
+    </div>
+</div>
+
+  
+
+<br><br>
+<h4  class="h4center" *ngIf="subToggle">Sub Tasks</h4>
+
+
+<div *ngFor="let subTask of subTasks"  class="divider">
+    <div *ngIf="subTask.task == focusTask.ID">
+
+
+        <div *ngIf="subTask.status == 'done'"  style="color: blue; opacity: .7;">
+
+        <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
+        <div class="dropdown makeInline" style="float: right;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Set
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
+                <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
+              <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
+            </div>
+        </div>
+
+        </div>
+
+        <div *ngIf="subTask.status == 'active'" >
+
+            <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
+            <div class="dropdown makeInline" style="float: right;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Set
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
+                    <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
+                  <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
+                </div>
+            </div>
+            <span style="float: right;">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  
+    
+            </div>
+
+
+    </div>
+</div>
+
+      
+                
+
+

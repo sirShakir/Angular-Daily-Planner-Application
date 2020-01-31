@@ -1,0 +1,30 @@
+div{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.btn-black{
+    background-color: #EF7B45;
+    color: black;
+}
+@media (min-width: 576px){
+.container {
+    max-width: none;
+}}
+
+@media (min-width: 768px){
+.container {
+    max-width: none;
+}}
+
+@media (min-width: 992px){
+.container {
+    max-width: none;
+}}
+
+@media (min-width: 578px){
+.container {
+    max-width: none;
+}}

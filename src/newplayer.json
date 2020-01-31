@@ -1,0 +1,9 @@
+{
+    "ID" : "some unique id",
+    "name" : "Carter",
+    "stamp" : "some stamp",
+    "projects" : [],
+    "sections" : [],
+    "tasks" : [],
+    "subTasks" : []
+}

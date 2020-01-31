@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+
+
+
+                <div class="col-2">Planner Logo</div>
+
+
+                
+                <div class="col-2">
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                List
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" routerLink="/inbox" >Inbox</a>
+                                <a class="dropdown-item" href="#">Today</a>
+                                <a class="dropdown-item" href="#">Week</a>
+                                <a class="dropdown-item" href="#">Month</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" (click)="navigate2CreateTaskQuicky()">Quick Add Task</a>
+                                </div>
+                            </div>   
+                </div>
+
+
+
+
+                <div class="col-2">
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Projects
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Ex1</a>
+                                <a class="dropdown-item" href="#">Ex2</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" routerLink="/createproject">Add Project</a>
+                                <a class="dropdown-item" routerLink="/viewprojects">View Projects</a>
+                                </div>
+                            </div>   
+                </div>
+
+
+
+                <div class="col-2">Quick Add</div>
+
+
+
+                <div class="col-2">
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filters
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Priority 1</a>
+                                <a class="dropdown-item" href="#">Priority 2</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Labels</a>
+                                </div>
+                            </div>   
+                </div>
+
+
+
+
+                <div class="col-2">Settings</div>
+    </div>
+</div>
+
