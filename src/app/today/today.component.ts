@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { Router } from '@angular/router';
+import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
+
 
 @Component({
   selector: 'app-today',
@@ -14,16 +16,10 @@ export class TodayComponent implements OnInit {
   todaysDate
   todaysTasks
   ngOnInit() {
-    let tempFullDate = new Date();
-    let tempYear = tempFullDate.getFullYear();
-    let tempMonth =  tempFullDate.getMonth() + 1 + "";
-    if(tempMonth.length == 1 ){
-      tempMonth = "0"+tempMonth;
-    }
-    let tempDate = tempFullDate.getDate();
-    this.todaysDate = tempYear + "-" + tempMonth + "-" + tempDate;
-
+    let unformattedFocusDay = new Date();
+    this.todaysDate = format(unformattedFocusDay, 'yyyy-MM-dd');
     this.viewTodayTasks();
+
   }
 
   viewTodayTasks(){

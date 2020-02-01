@@ -37,8 +37,9 @@ export class MonthComponent implements OnInit {
     }
     let tempDate = tempFullDate.getDate();
 
-    this.monthsTasks = this.player.getMonthsTask(this.todaysDate,tempYear,tempMonth,tempDate);
-   
+    //this.monthsTasks = this.player.getMonthsTask(this.todaysDate,tempYear,tempMonth,tempDate);
+    this.monthsTasks = this.player.getMonthsTask();
+
   }
 
   toggleSetTask(key:number, focusEleTask){

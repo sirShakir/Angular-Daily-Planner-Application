@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav #sidenav mode=\"side\" [(opened)]=\"opened\" (opened)=\"events.push('open!')\"\n               (closed)=\"events.push('close!')\" id=\"sidebar\">\n    <app-sidebar ></app-sidebar>\n  </mat-sidenav>\n\n\n\n<div class=\"container\">\n  <div id=\"topbarContainer\" class=\"row\" >\n    <div class=\"col-4\" (click)=\"sidenav.toggle()\">\n      G Logo\n    </div>\n    <div class=\"col-8\">\n      <app-topbar id=\"topbar\"></app-topbar>\n    </div>\n  </div>\n\n\n  <div class=\"row\">\n      <div id=\"routerbar\" class=\"col-12\">\n        <router-outlet></router-outlet>\n      </div>\n  </div>\n\n</div>\n\n\n</mat-sidenav-container>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav #sidenav mode=\"side\" [(opened)]=\"opened\" (opened)=\"events.push('open!')\"\n               (closed)=\"events.push('close!')\" id=\"sidebar\">\n    <app-sidebar ></app-sidebar>\n  </mat-sidenav>\n\n\n\n<div class=\"container\">\n  <div id=\"topbarContainer\" class=\"row\" >\n    <div class=\"col-4\" (click)=\"sidenav.toggle()\">\n      <img src=\"assets/menu.png\" alt=\"menubutton\" width=\"50\" height=\"100%\" >\n    </div>\n    <div class=\"col-8\">\n      <app-topbar id=\"topbar\"></app-topbar>\n    </div>\n  </div>\n\n\n  <div class=\"row\">\n      <div id=\"routerbar\" class=\"col-12\">\n        <router-outlet></router-outlet>\n      </div>\n  </div>\n\n</div>\n\n\n</mat-sidenav-container>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>All quick tasks</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n</style>\n\n<div *ngFor=\"let task of quickTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>All quick tasks</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n\n</style>\n\n<div *ngFor=\"let task of quickTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n  \n\n      <div class=\"dropdown makeInline\" style=\"float: right;\">\n        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n          {{task.status}}\n        </button>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n          <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n          <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n          <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n        </div>\n    </div>\n    <span  style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n      \n  \n  </div>\n\n\n</div>\n\n\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<p>Monthly task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n</style>\n\n<div *ngFor=\"let task of monthsTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<p>Monthly task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n    overflow: auto;\n\n}\n</style>\n\n<div *ngFor=\"let task of monthsTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>projects all view works!</p>\n\n<style>\n.projectlisting{\n    border-style:ridge;\n    height:  15%;\n}\nimg{\n    float: right;\n}\ninput{\n    height: 100%;\n    width: 30%;\n    border-style: none;\n    background-color: black;\n    color: white;\n}\n</style>\n\n\n\n\n<div *ngFor=\"let project of allprojects\" class=\"projectlisting\">\n    <input type=\"text\" id=\"{{project.name}}\" value=\"{{project.name}}\">\n    <img (click)=\"projectDelete(project)\" src=\"assets/delete.png\" alt=\"deleteproject\" width=\"50\" height=\"100%\">\n    <img (click)=\"projectSaveNewName(project)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" height=\"100%\" >\n    <img (click)=\"viewClickedProject(project)\" src=\"assets/folder.webp\" alt=\"openproject\" width=\"50\" height=\"100%\">\n</div>\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>projects all view works!</p>\n\n<style>\n.projectlisting{\n    border-style:ridge;\n    height:  15%;\n}\nimg{\n    float: right;\n}\ninput{\n    height: 100%;\n    width: 30%;\n    border-style: none;\n    background-color: black;\n    color: white;\n}\n</style>\n\n\n\n\n<div *ngFor=\"let project of allprojects\" class=\"projectlisting\">\n    <input type=\"text\" id=\"{{project.name}}\" value=\"{{project.name}}\">\n    <img (click)=\"projectDelete(project)\" src=\"assets/delete.png\" alt=\"deleteproject\" width=\"50\" height=\"100%\">\n    <img (click)=\"projectSaveNewName(project)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" height=\"100%\" >\n    <img (click)=\"viewClickedProject(project)\" src=\"assets/folder.png\" alt=\"openproject\" width=\"50\" height=\"100%\">\n</div>\n\n\n\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div style=\"overflow: auto;\">\n\n  <h4>{{this.focusproject.name}}</h4>\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a2/Icon_Add_256x256.png\" alt=\"addtask\" width=\"42\" height=\"42\" (click)=\"navigate2CreateTaskProject()\">Add task \n  <img style=\"float:right;\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/768px-More_Icon_C.svg.png\n  \" alt=\"addtask\" width=\"42\" height=\"42\" (click)=\"createSection4Project()\" > \n  <input type=\"text\" id=\"sectionName\" value=\"Add section\" style=\"float:right;\">\n  \n    \n  </div>\n  \n  <style>\n  input{\n    text-align: center;\n  }\n  .divider{\n      border-bottom-style:ridge;\n  }\n  .divMax{\n      height: 100%;\n      width: 100%;\n  }\n  .floatRightTHings{\n      float: right;\n  }\n  .makeInline{\n      display: inline-block;\n  }\n  .makeCenterInDiv{\n    display: flex;\n  align-items: center;\n  justify-content: center;\n  }\n  .container{\n      padding: 0;\n  }\n  .fixit{\n    padding: 0;\n    border-style: none;\n  }\n  @media (min-width: 576px){\n    .container{\n        max-width: none; \n    }     \n}\n  </style>\n  \n  \n\n<div *ngFor=\"let task of zeroTasks\"  class=\"divider\">   \n  \n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n            <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\">{{task.name}}</h4>\n            <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  \n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n              </div>\n\n    </div>\n\n    <div *ngIf=\"task.status == 'active'\">\n      <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\">{{task.name}}</h4>\n      <div class=\"dropdown makeInline\" style=\"float: right;\">\n          <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            \n          </button>\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n            <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n            <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n          </div>\n        </div>\n      <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n</div>\n\n</div>\n  \n  \n<div *ngFor=\"let section of focussections\" ><br><br>\n\n\n  <div class=\"dropdown makeCenterInDiv\">\n    <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n      {{section.name}}\n    </button>\n    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n      <span class=\"dropdown-item\" (click)=\"sectionSave(section)\">Edit</span>\n      <span class=\"dropdown-item\" (click)=\"sectionDelete(section)\">Delete</span>\n    </div>\n  </div>\n  \n  <img (click)=\"navigate2CreateTaskSection(section.ID)\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png\" alt=\"addtask\" width=\"42\" height=\"42\">\n  \n  <div *ngFor=\"let task of sectionTasks\" >\n\n    <div *ngIf=\"task.section == section.ID\" class=\"divider\">\n\n      <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              \n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n            </div>\n        </div>\n \n      </div>\n\n      <div *ngIf=\"task.status == 'active'\" >\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              \n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n            </div>\n        </div>\n        <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n      </div>\n\n    </div>\n        \n  </div>\n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div style=\"overflow: auto;\">\n\n  <h4>{{this.focusproject.name}}</h4>\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a2/Icon_Add_256x256.png\" alt=\"addtask\" width=\"42\" height=\"42\" (click)=\"navigate2CreateTaskProject()\">Add task \n  <img style=\"float:right;\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/768px-More_Icon_C.svg.png\n  \" alt=\"addtask\" width=\"42\" height=\"42\" (click)=\"createSection4Project()\" > \n  <input type=\"text\" id=\"sectionName\" value=\"Add section\" style=\"float:right;\">\n  \n    \n  </div>\n  \n  <style>\n  input{\n    text-align: center;\n  }\n  .makeDiv{\n  display: inline-block;\n}\n  .divider{\n      border-bottom-style:ridge;\n  }\n  .divMax{\n      height: 100%;\n      width: 100%;\n  }\n  .floatRightTHings{\n      float: right;\n  }\n  .makeInline{\n      display: inline-block;\n  }\n  .makeCenterInDiv{\n    display: flex;\n  align-items: center;\n  justify-content: center;\n  }\n  .container{\n      padding: 0;\n  }\n  .fixit{\n    padding: 0;\n    border-style: none;\n  }\n  @media (min-width: 576px){\n    .container{\n        max-width: none; \n    }     \n}\n  </style>\n  \n  \n\n<div *ngFor=\"let task of zeroTasks\"  class=\"divider\">   \n  \n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n            <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\">{{task.name}}</h4>\n            <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  \n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n              </div>\n\n    </div>\n\n    <div *ngIf=\"task.status == 'active'\">\n      <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\">{{task.name}}</h4>\n      <div class=\"dropdown makeInline\" style=\"float: right;\">\n          <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            \n          </button>\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n            <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n            <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n          </div>\n        </div>\n      <span style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n</div>\n\n</div>\n  \n  \n<div *ngFor=\"let section of focussections\" ><br><br>\n\n\n  <div class=\"dropdown makeCenterInDiv\">\n    <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n      {{section.name}}\n    </button>\n    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n      <span class=\"dropdown-item\" (click)=\"sectionSave(section)\">Edit</span>\n      <span class=\"dropdown-item\" (click)=\"sectionDelete(section)\">Delete</span>\n    </div>\n  </div>\n  \n  <img (click)=\"navigate2CreateTaskSection(section.ID)\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png\" alt=\"addtask\" width=\"42\" height=\"42\">\n  \n  <div *ngFor=\"let task of sectionTasks\" >\n\n    <div *ngIf=\"task.section == section.ID\" class=\"divider\">\n\n      <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              \n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n            </div>\n        </div>\n \n      </div>\n\n      <div *ngIf=\"task.status == 'active'\" >\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              \n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n              <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n            </div>\n        </div>\n        <span style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n      </div>\n\n    </div>\n        \n  </div>\n\n</div>");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<a  routerLink=\"\">Zen</a><br><br>\n<a  routerLink=\"/inbox\" >Inbox</a><br>\n<a  routerLink=\"/today\">Today</a><br>\n<a  routerLink=\"/week\">Week</a><br>\n<a  routerLink=\"/month\">Month</a><br>\n<a  (click)=\"navigate2CreateTaskQuicky()\">Add Quick Task</a><br><br>\n\n<h5>Projects</h5>\n<a  routerLink=\"/createproject\">Add Project</a><br>\n<a  routerLink=\"/viewprojects\">View Projects</a><br>\n<span *ngFor=\"let project of projects\"  (click)=\"viewClickedProject(project)\">\n        <a>{{project.name}}</a><br>\n</span><br><br>\n\n<!--\n<h5>Filters</h5>\n<a  href=\"#\">Priority 1</a><br>\n<a  href=\"#\">Priority 2</a><br>\n<a  href=\"#\">Labels</a>\n-->\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<a  routerLink=\"\">Zen</a><br><br>\n<a  routerLink=\"/inbox\" >Inbox</a><br>\n<a  routerLink=\"/today\">Today</a><br>\n<a  routerLink=\"/tomorrow\" >Tomorrow</a><br>\n<a  routerLink=\"/week\">Week</a><br>\n<a  routerLink=\"/month\">Month</a><br>\n<a  (click)=\"navigate2CreateTaskQuicky()\">Add Quick Task</a><br><br>\n\n<h5>Projects</h5>\n<a  routerLink=\"/createproject\">Add Project</a><br>\n<a  routerLink=\"/viewprojects\">View Projects</a><br>\n<span *ngFor=\"let project of projects\"  (click)=\"viewClickedProject(project)\">\n        <a>{{project.name}}</a><br>\n</span><br><br>\n\n<!--\n<h5>Filters</h5>\n<a  href=\"#\">Priority 1</a><br>\n<a  href=\"#\">Priority 2</a><br>\n<a  href=\"#\">Labels</a>\n-->\n\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<style>\n    .h4center{\n        text-align: center;\n    }\n\n.divider{\n    border-bottom-style:ridge;\n}\n.divMax{\n    height: 100%;\n    width: 100%;\n}\n.floatRightTHings{\n    float: right;\n}\n.makeInline{\n    display: inline-block;\n}\ninput {\n    display: block;\n    width: 100%;\n}\n.scription{\n    height: 100%;\n}\n.container{\n    padding: 0;\n}\n.taa{\n    display: block;\n    height: 50%;  \n    width: 100%;\n}\n.spanny{\n    display: block;\n    text-align: center;\n    height: 25%;   \n    width: 100%;\n}\n.spanny0{\n    display: block;\n    text-align: center;\n    width: 100%;\n}\n@media (min-width: 576px){\n    .container{\n        max-width: none; \n    }     \n}\n</style>\n        \n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-6\">\n            <span class=\"spanny0\">Name</span>\n            <input type=\"text\" id=\"focusTaskname\" value=\"{{focusTask.name}}\">\n            <span class=\"spanny0\">Due</span>\n            <input type=\"date\" id=\"focusTaskdue\" value=\"{{focusTask.due}}\">\n            <span class=\"spanny0\">Level</span>\n            <input type=\"number\" id=\"focusTasklevel\" value=\"{{focusTask.level}}\">\n            <span class=\"spanny0\">Status</span>\n            <div>{{focusTask.status}}</div>\n            <span class=\"spanny0\">Created</span>\n            <div>{{focusTask.created}}</div>\n        </div>\n\n        <div class=\"col-6\">\n            <span class=\"spanny\">Description</span>\n            <textarea  type=\"textarea\" class=\"taa\" id=\"focusTaskdescription\" value=\"{{focusTask.description}}\" >\n            </textarea>\n            <img *ngIf=\"subToggle\" (click)=\"navigate2CreateSubTask(focusTask.ID)\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png\" alt=\"addtask\" width=\"42\" height=\"42\">\n            <img style=\"float: right;\" (click)=\"taskDelete(focusTask)\" src=\"https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Icon_delete_yellow.svg/320px-Icon_delete_yellow.svg.png\" alt=\"deleteproject\" width=\"50\" >\n            <img *ngIf=\"subToggle\" style=\"float: right;\" (click)=\"taskSaveNewData(focusTask)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" >   \n            <img *ngIf=\"subToggle == false\" style=\"float: right;\" (click)=\"subTaskSaveNewData(focusTask)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" >   \n        </div>\n    </div>\n</div>\n\n  \n\n<br><br>\n<h4  class=\"h4center\" *ngIf=\"subToggle\">Sub Tasks</h4>\n\n\n<div *ngFor=\"let subTask of subTasks\"  class=\"divider\">\n    <div *ngIf=\"subTask.task == focusTask.ID\">\n\n\n        <div *ngIf=\"subTask.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedSubTask(subTask)\">{{subTask.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Set\n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(0,subTask)\">Complete</span>\n                <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(1,subTask)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"subTaskDeleteDropdown(subTask)\">Delete</span>\n            </div>\n        </div>\n\n        </div>\n\n        <div *ngIf=\"subTask.status == 'active'\" >\n\n            <h4 style=\"display:inline-block;\" (click)=\"viewClickedSubTask(subTask)\">{{subTask.name}}</h4>\n            <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  Set\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                    <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(0,subTask)\">Complete</span>\n                    <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(1,subTask)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"subTaskDeleteDropdown(subTask)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"float: right;\">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  \n    \n            </div>\n\n\n    </div>\n</div>\n\n      \n                \n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<style>\n    .h4center{\n        text-align: center;\n    }\n\n.divider{\n    border-bottom-style:ridge;\n}\n.divMax{\n    height: 100%;\n    width: 100%;\n}\n.floatRightTHings{\n    float: right;\n}\n.makeInline{\n    display: inline-block;\n}\ninput {\n    display: block;\n    width: 100%;\n}\n.scription{\n    height: 100%;\n}\n.container{\n    padding: 0;\n}\n.taa{\n    display: block;\n    height: 50%;  \n    width: 100%;\n}\n.spanny{\n    display: block;\n    text-align: center;\n    height: 25%;   \n    width: 100%;\n}\n.spanny0{\n    display: block;\n    text-align: center;\n    width: 100%;\n}\n@media (min-width: 576px){\n    .container{\n        max-width: none; \n    }     \n}\n</style>\n        \n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-6\">\n            <span class=\"spanny0\">Name</span>\n            <input type=\"text\" id=\"focusTaskname\" value=\"{{focusTask.name}}\">\n            <span class=\"spanny0\">Due</span>\n            <input type=\"date\" id=\"focusTaskdue\" value=\"{{focusTask.due}}\">\n            <span class=\"spanny0\">Level</span>\n            <input type=\"number\" id=\"focusTasklevel\" value=\"{{focusTask.level}}\">\n            <span class=\"spanny0\">Status</span>\n            <div>{{focusTask.status}}</div>\n            <span class=\"spanny0\">Created</span>\n            <div>{{focusTask.created}}</div>\n        </div>\n\n        <div class=\"col-6\">\n            <span class=\"spanny\">Description</span>\n            <textarea  type=\"textarea\" class=\"taa\" id=\"focusTaskdescription\" value=\"{{focusTask.description}}\" >\n            </textarea>\n            <img *ngIf=\"subToggle\" (click)=\"navigate2CreateSubTask(focusTask.ID)\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Toicon-icon-pictogram-add.svg/1024px-Toicon-icon-pictogram-add.svg.png\" alt=\"addtask\" width=\"42\" height=\"42\">\n            <img style=\"float: right;\" (click)=\"taskDelete(focusTask)\" src=\"https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Icon_delete_yellow.svg/320px-Icon_delete_yellow.svg.png\" alt=\"deleteproject\" width=\"50\" >\n            <img *ngIf=\"subToggle\" style=\"float: right;\" (click)=\"taskSaveNewData(focusTask)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" >   \n            <img *ngIf=\"subToggle == false\" style=\"float: right;\" (click)=\"subTaskSaveNewData(focusTask)\" src=\"assets/save.png\" alt=\"saveproject\" width=\"50\" >   \n        </div>\n    </div>\n</div>\n\n  \n\n<br><br>\n<h4  class=\"h4center\" *ngIf=\"subToggle\">Sub Tasks</h4>\n\n\n<div *ngFor=\"let subTask of subTasks\"  class=\"divider\">\n    <div *ngIf=\"subTask.task == focusTask.ID\">\n\n\n        <div *ngIf=\"subTask.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n        <h4 style=\"display:inline-block;\" (click)=\"viewClickedSubTask(subTask)\">{{subTask.name}}</h4>\n        <div class=\"dropdown makeInline\" style=\"float: right;\">\n            <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Set\n            </button>\n            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(0,subTask)\">Complete</span>\n                <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(1,subTask)\">Active</span>\n              <span class=\"dropdown-item\" (click)=\"subTaskDeleteDropdown(subTask)\">Delete</span>\n            </div>\n        </div>\n\n        </div>\n\n        <div *ngIf=\"subTask.status == 'active'\" >\n\n            <h4 style=\"display:inline-block;\" (click)=\"viewClickedSubTask(subTask)\">{{subTask.name}}</h4>\n            <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  Set\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                    <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(0,subTask)\">Complete</span>\n                    <span class=\"dropdown-item\" (click)=\"toggleSetSubTask(1,subTask)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"subTaskDeleteDropdown(subTask)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"display: inline-block;\">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  \n    \n            </div>\n\n\n    </div>\n</div>\n\n      \n                \n\n\n");
 
 /***/ }),
 
@@ -162,7 +162,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Todays task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n</style>\n\n<div *ngFor=\"let task of todaysTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Todays task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n\n}\n\n</style>\n\n<div *ngFor=\"let task of todaysTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/tomorrow/tomorrow.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/tomorrow/tomorrow.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Tomorrows task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n\n}\n\n</style>\n\n<div *ngFor=\"let task of tomorrowsTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"display: inline-block;\">Due : {{task.due.substring(5)}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
 
 /***/ }),
 
@@ -188,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Weekly task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n</style>\n\n<div *ngFor=\"let task of weeksTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Weekly task</p>\n\n<style>\n.makeInline{\n    display: inline-block;\n}\n.divider{\n    border-bottom-style:ridge;\n}\n\n</style>\n\n<div *ngFor=\"let task of weeksTasks\" class=\"divider\">\n\n  <div *ngIf=\"task.status == 'done'\"  style=\"color: blue; opacity: .7;\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n           <!-- <span style=\"float: right;\">Due : {{task.due}} Priority : {{task.level}}</span>  -->\n  </div>\n\n  <div *ngIf=\"task.status == 'active'\">\n\n    <h4 style=\"display:inline-block;\" (click)=\"viewClickedTask(task)\" >{{task.name}}</h4>\n          <div class=\"dropdown makeInline\" style=\"float: right;\">\n                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                  {{task.status}}\n                </button>\n                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(0,task)\">Complete</span>\n                  <span class=\"dropdown-item\" (click)=\"toggleSetTask(1,task)\">Active</span>\n                  <span class=\"dropdown-item\" (click)=\"taskDelete(task)\">Delete</span>\n                </div>\n            </div>\n            <span style=\"display: inline-block;\">Due : {{task.due}} Priority : {{task.level}}</span>  \n  </div>\n\n\n</div>\n\n\n");
 
 /***/ }),
 
@@ -436,14 +449,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _inbox_inbox_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inbox/inbox.component */ "./src/app/inbox/inbox.component.ts");
 /* harmony import */ var _today_today_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./today/today.component */ "./src/app/today/today.component.ts");
-/* harmony import */ var _week_week_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./week/week.component */ "./src/app/week/week.component.ts");
-/* harmony import */ var _month_month_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./month/month.component */ "./src/app/month/month.component.ts");
-/* harmony import */ var _taskcreate_taskcreate_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./taskcreate/taskcreate.component */ "./src/app/taskcreate/taskcreate.component.ts");
-/* harmony import */ var _projectcreate_projectcreate_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./projectcreate/projectcreate.component */ "./src/app/projectcreate/projectcreate.component.ts");
-/* harmony import */ var _projectsview_projectsview_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./projectsview/projectsview.component */ "./src/app/projectsview/projectsview.component.ts");
-/* harmony import */ var _projectview_projectview_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./projectview/projectview.component */ "./src/app/projectview/projectview.component.ts");
-/* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/landing/landing.component.ts");
-/* harmony import */ var _taskview_taskview_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./taskview/taskview.component */ "./src/app/taskview/taskview.component.ts");
+/* harmony import */ var _tomorrow_tomorrow_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tomorrow/tomorrow.component */ "./src/app/tomorrow/tomorrow.component.ts");
+/* harmony import */ var _week_week_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./week/week.component */ "./src/app/week/week.component.ts");
+/* harmony import */ var _month_month_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./month/month.component */ "./src/app/month/month.component.ts");
+/* harmony import */ var _taskcreate_taskcreate_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./taskcreate/taskcreate.component */ "./src/app/taskcreate/taskcreate.component.ts");
+/* harmony import */ var _projectcreate_projectcreate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./projectcreate/projectcreate.component */ "./src/app/projectcreate/projectcreate.component.ts");
+/* harmony import */ var _projectsview_projectsview_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./projectsview/projectsview.component */ "./src/app/projectsview/projectsview.component.ts");
+/* harmony import */ var _projectview_projectview_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./projectview/projectview.component */ "./src/app/projectview/projectview.component.ts");
+/* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/landing/landing.component.ts");
+/* harmony import */ var _taskview_taskview_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./taskview/taskview.component */ "./src/app/taskview/taskview.component.ts");
+
 
 
 
@@ -458,16 +473,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_11__["LandingComponent"] },
+    { path: '', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_12__["LandingComponent"] },
     { path: 'inbox', component: _inbox_inbox_component__WEBPACK_IMPORTED_MODULE_3__["InboxComponent"] },
     { path: 'today', component: _today_today_component__WEBPACK_IMPORTED_MODULE_4__["TodayComponent"] },
-    { path: 'week', component: _week_week_component__WEBPACK_IMPORTED_MODULE_5__["WeekComponent"] },
-    { path: 'month', component: _month_month_component__WEBPACK_IMPORTED_MODULE_6__["MonthComponent"] },
-    { path: 'createtask/:tasktype', component: _taskcreate_taskcreate_component__WEBPACK_IMPORTED_MODULE_7__["TaskcreateComponent"] },
-    { path: 'createproject', component: _projectcreate_projectcreate_component__WEBPACK_IMPORTED_MODULE_8__["ProjectcreateComponent"] },
-    { path: 'viewtask/:task', component: _taskview_taskview_component__WEBPACK_IMPORTED_MODULE_12__["TaskviewComponent"] },
-    { path: 'viewproject/:project', component: _projectview_projectview_component__WEBPACK_IMPORTED_MODULE_10__["ProjectviewComponent"] },
-    { path: 'viewprojects', component: _projectsview_projectsview_component__WEBPACK_IMPORTED_MODULE_9__["ProjectsviewComponent"] }
+    { path: 'tomorrow', component: _tomorrow_tomorrow_component__WEBPACK_IMPORTED_MODULE_5__["TomorrowComponent"] },
+    { path: 'week', component: _week_week_component__WEBPACK_IMPORTED_MODULE_6__["WeekComponent"] },
+    { path: 'month', component: _month_month_component__WEBPACK_IMPORTED_MODULE_7__["MonthComponent"] },
+    { path: 'createtask/:tasktype', component: _taskcreate_taskcreate_component__WEBPACK_IMPORTED_MODULE_8__["TaskcreateComponent"] },
+    { path: 'createproject', component: _projectcreate_projectcreate_component__WEBPACK_IMPORTED_MODULE_9__["ProjectcreateComponent"] },
+    { path: 'viewtask/:task', component: _taskview_taskview_component__WEBPACK_IMPORTED_MODULE_13__["TaskviewComponent"] },
+    { path: 'viewproject/:project', component: _projectview_projectview_component__WEBPACK_IMPORTED_MODULE_11__["ProjectviewComponent"] },
+    { path: 'viewprojects', component: _projectsview_projectsview_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsviewComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -491,7 +507,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n#topbarContainer{\r\n    height: 10vh;\r\n    background-color: #170DBF;\r\n    border-color: #EF7B45;\r\n    border-style: solid;\r\n    border-radius: 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n#sidebar {\r\n    height: 100vh;\r\n    border-color: #170DBF;\r\n    border-style: solid;\r\n    border-radius: 5px;\r\n}\r\n\r\n#routerbar {\r\n    height: 90vh;\r\n    background-color: black;\r\n    color: white;\r\n}\r\n\r\n#topbar{\r\n    width: 100%;\r\n}\r\n\r\ndiv{\r\n      margin-right: 0px;\r\n      margin-left: 0px;\r\n      padding-left: 0;\r\n      padding-right: 0;\r\n  }\r\n\r\n.mat-drawer-side{\r\n    background-color: #EF7B45;\r\n    color: black;\r\n}\r\n\r\n.mat-drawer-container{\r\n    background-color: black;\r\n}\r\n\r\n@media (min-width: 576px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 768px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 992px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 578px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQTtJQUNJLFlBQVk7SUFDWix5QkFBeUI7SUFDekIscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHFCQUFxQjtJQUNyQixtQkFBbUI7SUFDbkIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLHVCQUF1QjtJQUN2QixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO01BQ00saUJBQWlCO01BQ2pCLGdCQUFnQjtNQUNoQixlQUFlO01BQ2YsZ0JBQWdCO0VBQ3BCOztBQUdGO0lBQ0kseUJBQXlCO0lBQ3pCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSx1QkFBdUI7QUFDM0I7O0FBSUU7RUFDQTtNQUNJLGVBQWU7RUFDbkIsQ0FBQzs7QUFFRDtFQUNBO01BQ0ksZUFBZTtFQUNuQixDQUFDOztBQUVEO0VBQ0E7TUFDSSxlQUFlO0VBQ25CLENBQUM7O0FBRUQ7RUFDQTtNQUNJLGVBQWU7RUFDbkIsQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG4jdG9wYmFyQ29udGFpbmVye1xyXG4gICAgaGVpZ2h0OiAxMHZoO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzE3MERCRjtcclxuICAgIGJvcmRlci1jb2xvcjogI0VGN0I0NTtcclxuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4jc2lkZWJhciB7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjMTcwREJGO1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxufVxyXG5cclxuI3JvdXRlcmJhciB7XHJcbiAgICBoZWlnaHQ6IDkwdmg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI3RvcGJhcntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5kaXZ7XHJcbiAgICAgIG1hcmdpbi1yaWdodDogMHB4O1xyXG4gICAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICAgIHBhZGRpbmctcmlnaHQ6IDA7XHJcbiAgfVxyXG5cclxuXHJcbi5tYXQtZHJhd2VyLXNpZGV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRUY3QjQ1O1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4ubWF0LWRyYXdlci1jb250YWluZXJ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxufVxyXG4gIFxyXG4gIFxyXG4gIFxyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA1NzZweCl7XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICAgIG1heC13aWR0aDogbm9uZTtcclxuICB9fVxyXG4gIFxyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA3NjhweCl7XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICAgIG1heC13aWR0aDogbm9uZTtcclxuICB9fVxyXG4gIFxyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA5OTJweCl7XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICAgIG1heC13aWR0aDogbm9uZTtcclxuICB9fVxyXG4gIFxyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA1NzhweCl7XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICAgIG1heC13aWR0aDogbm9uZTtcclxuICB9fVxyXG5cclxuXHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n#topbarContainer{\r\n    \r\n    background-color: #170DBF;\r\n    border-color: #EF7B45;\r\n    border-style: solid;\r\n    border-radius: 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n#sidebar {\r\n    height: 100vh;\r\n    border-color: #170DBF;\r\n    border-style: solid;\r\n    border-radius: 5px;\r\n}\r\n\r\n#routerbar {\r\n    height: 90vh;\r\n    background-color: black;\r\n    color: white;\r\n}\r\n\r\n#topbar{\r\n    width: 100%;\r\n}\r\n\r\ndiv{\r\n      margin-right: 0px;\r\n      margin-left: 0px;\r\n      padding-left: 0;\r\n      padding-right: 0;\r\n  }\r\n\r\n.mat-drawer-side{\r\n    background-color: #EF7B45;\r\n    color: black;\r\n}\r\n\r\n.mat-drawer-container{\r\n    background-color: black;\r\n}\r\n\r\n@media (min-width: 576px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 768px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 992px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n@media (min-width: 578px){\r\n  .container {\r\n      max-width: none;\r\n  }}\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQTs7SUFFSSx5QkFBeUI7SUFDekIscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHFCQUFxQjtJQUNyQixtQkFBbUI7SUFDbkIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLHVCQUF1QjtJQUN2QixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO01BQ00saUJBQWlCO01BQ2pCLGdCQUFnQjtNQUNoQixlQUFlO01BQ2YsZ0JBQWdCO0VBQ3BCOztBQUdGO0lBQ0kseUJBQXlCO0lBQ3pCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSx1QkFBdUI7QUFDM0I7O0FBSUU7RUFDQTtNQUNJLGVBQWU7RUFDbkIsQ0FBQzs7QUFFRDtFQUNBO01BQ0ksZUFBZTtFQUNuQixDQUFDOztBQUVEO0VBQ0E7TUFDSSxlQUFlO0VBQ25CLENBQUM7O0FBRUQ7RUFDQTtNQUNJLGVBQWU7RUFDbkIsQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG4jdG9wYmFyQ29udGFpbmVye1xyXG4gICAgXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTcwREJGO1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjRUY3QjQ1O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbn1cclxuXHJcbiNzaWRlYmFyIHtcclxuICAgIGhlaWdodDogMTAwdmg7XHJcbiAgICBib3JkZXItY29sb3I6ICMxNzBEQkY7XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG59XHJcblxyXG4jcm91dGVyYmFyIHtcclxuICAgIGhlaWdodDogOTB2aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4jdG9wYmFye1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmRpdntcclxuICAgICAgbWFyZ2luLXJpZ2h0OiAwcHg7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICAgIHBhZGRpbmctbGVmdDogMDtcclxuICAgICAgcGFkZGluZy1yaWdodDogMDtcclxuICB9XHJcblxyXG5cclxuLm1hdC1kcmF3ZXItc2lkZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNFRjdCNDU7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn1cclxuXHJcbi5tYXQtZHJhd2VyLWNvbnRhaW5lcntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG59XHJcbiAgXHJcbiAgXHJcbiAgXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDU3NnB4KXtcclxuICAuY29udGFpbmVyIHtcclxuICAgICAgbWF4LXdpZHRoOiBub25lO1xyXG4gIH19XHJcbiAgXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KXtcclxuICAuY29udGFpbmVyIHtcclxuICAgICAgbWF4LXdpZHRoOiBub25lO1xyXG4gIH19XHJcbiAgXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDk5MnB4KXtcclxuICAuY29udGFpbmVyIHtcclxuICAgICAgbWF4LXdpZHRoOiBub25lO1xyXG4gIH19XHJcbiAgXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDU3OHB4KXtcclxuICAuY29udGFpbmVyIHtcclxuICAgICAgbWF4LXdpZHRoOiBub25lO1xyXG4gIH19XHJcblxyXG5cclxuIl19 */");
 
 /***/ }),
 
@@ -560,6 +576,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _today_today_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./today/today.component */ "./src/app/today/today.component.ts");
 /* harmony import */ var _week_week_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./week/week.component */ "./src/app/week/week.component.ts");
 /* harmony import */ var _month_month_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./month/month.component */ "./src/app/month/month.component.ts");
+/* harmony import */ var _tomorrow_tomorrow_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tomorrow/tomorrow.component */ "./src/app/tomorrow/tomorrow.component.ts");
+
 
 
 
@@ -603,7 +621,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _projectview_projectview_component__WEBPACK_IMPORTED_MODULE_15__["ProjectviewComponent"],
             _today_today_component__WEBPACK_IMPORTED_MODULE_18__["TodayComponent"],
             _week_week_component__WEBPACK_IMPORTED_MODULE_19__["WeekComponent"],
-            _month_month_component__WEBPACK_IMPORTED_MODULE_20__["MonthComponent"]
+            _month_month_component__WEBPACK_IMPORTED_MODULE_20__["MonthComponent"],
+            _tomorrow_tomorrow_component__WEBPACK_IMPORTED_MODULE_21__["TomorrowComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -804,7 +823,7 @@ let MonthComponent = class MonthComponent {
         }
         let tempDate = tempFullDate.getDate();
         this.todaysDate = tempYear + "-" + tempMonth + "-" + tempDate;
-        console.log(this.todaysDate);
+        //console.log(this.todaysDate);
         this.viewMonthsTasks();
     }
     viewMonthsTasks() {
@@ -815,7 +834,8 @@ let MonthComponent = class MonthComponent {
             tempMonth = "0" + tempMonth;
         }
         let tempDate = tempFullDate.getDate();
-        this.monthsTasks = this.player.getMonthsTask(this.todaysDate, tempYear, tempMonth, tempDate);
+        //this.monthsTasks = this.player.getMonthsTask(this.todaysDate,tempYear,tempMonth,tempDate);
+        this.monthsTasks = this.player.getMonthsTask();
     }
     toggleSetTask(key, focusEleTask) {
         switch (key) {
@@ -1092,20 +1112,31 @@ let Player = class Player {
         }
         return tasksHolder;
     }
-    getMonthsTask(concatDate, focusYear, focusMonth, focusDayDate) {
+    getTomorrowTasks() {
         let tasksHolder = [];
-        let startDayOfThisMonth = new Date(focusYear, focusMonth, focusDayDate);
-        //let formatedStartDate = format(startDayOfThisWeek, 'yyyy-MM-dd');
-        let lastDayOfThisMonth = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["lastDayOfMonth"])(new Date(focusYear, focusMonth, focusDayDate));
-        //let formatedEndDate = format(lastDayOfThisWeek, 'yyyy-MM-dd');
+        let startDate = new Date();
+        var endDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["addDays"])(startDate, 1);
+        let formattedFocusDay = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["format"])(endDate, 'yyyy-MM-dd');
+        for (let x = 0; x < this.player.tasks.length; x++) {
+            // console.log(focusDate);
+            // console.log(this.player.tasks[x].due);
+            if (this.player.tasks[x].due == formattedFocusDay) {
+                tasksHolder.push(this.player.tasks[x]);
+            }
+        }
+        return tasksHolder;
+    }
+    getMonthsTask() {
+        let tasksHolder = [];
+        let startDate = new Date();
+        var endDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["addDays"])(startDate, 30);
         var result = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["eachDayOfInterval"])({
-            start: startDayOfThisMonth,
-            end: lastDayOfThisMonth
+            start: startDate,
+            end: endDate
         });
-        //console.log(result);
         for (let y = 0; y < result.length; y++) {
             let formattedFocusDay = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["format"])(result[y], 'yyyy-MM-dd');
-            //console.log(formattedFocusDay);
+            // console.log(formattedFocusDay);
             for (let x = 0; x < this.player.tasks.length; x++) {
                 if (this.player.tasks[x].due == formattedFocusDay) {
                     tasksHolder.push(this.player.tasks[x]);
@@ -1114,17 +1145,14 @@ let Player = class Player {
         }
         return tasksHolder;
     }
-    getWeeksTask(concatDate, focusYear, focusMonth, focusDayDate) {
+    getWeeksTask() {
         let tasksHolder = [];
-        let startDayOfThisWeek = new Date(focusYear, focusMonth, focusDayDate);
-        //let formatedStartDate = format(startDayOfThisWeek, 'yyyy-MM-dd');
-        let lastDayOfThisWeek = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["lastDayOfISOWeek"])(new Date(focusYear, focusMonth, focusDayDate));
-        //let formatedEndDate = format(lastDayOfThisWeek, 'yyyy-MM-dd');
+        let startDate = new Date();
+        var endDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["addDays"])(startDate, 7);
         var result = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["eachDayOfInterval"])({
-            start: startDayOfThisWeek,
-            end: lastDayOfThisWeek
+            start: startDate,
+            end: endDate
         });
-        console.log(result);
         for (let y = 0; y < result.length; y++) {
             let formattedFocusDay = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["format"])(result[y], 'yyyy-MM-dd');
             // console.log(formattedFocusDay);
@@ -1919,7 +1947,7 @@ let TaskviewComponent = class TaskviewComponent {
         switch (key) {
             case 0:
                 // code block switch it to complete
-                this.player.setStatusSubTask(focusEleTask.ID, "complete");
+                this.player.setStatusSubTask(focusEleTask.ID, "done");
                 break;
             case 1:
                 // switch it to active
@@ -1972,6 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../player */ "./src/app/player.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+
 
 
 
@@ -1982,14 +2012,8 @@ let TodayComponent = class TodayComponent {
         this.router = router;
     }
     ngOnInit() {
-        let tempFullDate = new Date();
-        let tempYear = tempFullDate.getFullYear();
-        let tempMonth = tempFullDate.getMonth() + 1 + "";
-        if (tempMonth.length == 1) {
-            tempMonth = "0" + tempMonth;
-        }
-        let tempDate = tempFullDate.getDate();
-        this.todaysDate = tempYear + "-" + tempMonth + "-" + tempDate;
+        let unformattedFocusDay = new Date();
+        this.todaysDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(unformattedFocusDay, 'yyyy-MM-dd');
         this.viewTodayTasks();
     }
     viewTodayTasks() {
@@ -2025,6 +2049,90 @@ TodayComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./today.component.css */ "./src/app/today/today.component.css")).default]
     })
 ], TodayComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/tomorrow/tomorrow.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/tomorrow/tomorrow.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RvbW9ycm93L3RvbW9ycm93LmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/tomorrow/tomorrow.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/tomorrow/tomorrow.component.ts ***!
+  \************************************************/
+/*! exports provided: TomorrowComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TomorrowComponent", function() { return TomorrowComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../player */ "./src/app/player.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+
+
+
+
+
+let TomorrowComponent = class TomorrowComponent {
+    constructor(player, router) {
+        this.player = player;
+        this.router = router;
+    }
+    ngOnInit() {
+        let unformattedFocusDay = new Date();
+        this.todaysDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(unformattedFocusDay, 'yyyy-MM-dd');
+        this.viewTodayTasks();
+        var endDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["addDays"])(unformattedFocusDay, 1);
+        let money = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["formatDistance"])(endDate, unformattedFocusDay);
+        console.log(money);
+    }
+    viewTodayTasks() {
+        this.tomorrowsTasks = this.player.getTomorrowTasks();
+        //this.todaysTasks = takshold;
+    }
+    toggleSetTask(key, focusEleTask) {
+        switch (key) {
+            case 0:
+                // code block switch it to complete
+                this.player.setStatusTask(focusEleTask.ID, "done");
+                break;
+            case 1:
+                // switch it to active
+                this.player.setStatusTask(focusEleTask.ID, "active");
+                break;
+        }
+    }
+    viewClickedTask(focusTask) {
+        //console.log(focusTask)
+        this.player.setNavBackState("inbox", "empty");
+        this.router.navigate(['/viewtask', JSON.stringify(focusTask)]);
+    }
+};
+TomorrowComponent.ctorParameters = () => [
+    { type: _player__WEBPACK_IMPORTED_MODULE_2__["Player"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+TomorrowComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-tomorrow',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./tomorrow.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/tomorrow/tomorrow.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./tomorrow.component.css */ "./src/app/tomorrow/tomorrow.component.css")).default]
+    })
+], TomorrowComponent);
 
 
 
@@ -2087,7 +2195,7 @@ let TopbarComponent = class TopbarComponent {
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var json = xhr.responseText;
-                    console.log(json);
+                    //console.log(json);
                 }
             };
             var data = userplayer;
@@ -2171,7 +2279,7 @@ let WeekComponent = class WeekComponent {
         }
         let tempDate = tempFullDate.getDate();
         this.todaysDate = tempYear + "-" + tempMonth + "-" + tempDate;
-        console.log(this.todaysDate);
+        //console.log(this.todaysDate);
         this.viewWeeksTasks();
     }
     viewWeeksTasks() {
@@ -2182,7 +2290,8 @@ let WeekComponent = class WeekComponent {
             tempMonth = "0" + tempMonth;
         }
         let tempDate = tempFullDate.getDate();
-        this.weeksTasks = this.player.getWeeksTask(this.todaysDate, tempYear, tempMonth, tempDate);
+        //this.weeksTasks = this.player.getWeeksTask(this.todaysDate,tempYear,tempMonth,tempDate);
+        this.weeksTasks = this.player.getWeeksTask();
     }
     toggleSetTask(key, focusEleTask) {
         switch (key) {
@@ -2286,7 +2395,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! c:\Apache24\htdocs\ngGatordone\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Apache24\htdocs\ngGatordone\src\main.ts */"./src/main.ts");
 
 
 /***/ })

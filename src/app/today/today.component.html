@@ -6,9 +6,9 @@
 }
 .divider{
     border-bottom-style:ridge;
-    overflow: auto;
 
 }
+
 </style>
 
 <div *ngFor="let task of todaysTasks" class="divider">
@@ -42,7 +42,7 @@
                   <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
                 </div>
             </div>
-            <span style="float: right;">Due : {{task.due}} Priority : {{task.level}}</span>  
+            <span style="display: inline-block;">Due : {{task.due}} Priority : {{task.level}}</span>  
   </div>
 
 

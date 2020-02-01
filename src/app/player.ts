@@ -1,8 +1,8 @@
 import { Injectable  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
-var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
-//var url = "/playerplanner/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
+//var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
+var url = "/playerplanner/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
 var valueC = getCookie("gatorc");
 var valueP = getCookie("gatorp");
 var valueBody = { "codename" : valueC, "pin": valueP};
@@ -23,7 +23,7 @@ export class Player  {
    
   }
   async loadPlayer(){
-    return await this.http.get(url)
+    return await this.http.post(url,valueBody)
     .toPromise()
     .then(
       res => { // Success
@@ -251,49 +251,36 @@ export class Player  {
     return tasksHolder;
   }
 
-  getMonthsTask(concatDate,focusYear,focusMonth,focusDayDate){
+  getTomorrowTasks(){
     let tasksHolder = [];
+    let startDate = new Date();
+    var endDate = addDays(startDate, 1);
+    let formattedFocusDay = format(endDate, 'yyyy-MM-dd');
 
-    let startDayOfThisMonth = new Date(focusYear, focusMonth, focusDayDate);
-    //let formatedStartDate = format(startDayOfThisWeek, 'yyyy-MM-dd');
-    let lastDayOfThisMonth = lastDayOfMonth(new Date(focusYear, focusMonth, focusDayDate));
-    //let formatedEndDate = format(lastDayOfThisWeek, 'yyyy-MM-dd');
+    for(let x = 0; x < this.player.tasks.length; x++){
+      // console.log(focusDate);
+      // console.log(this.player.tasks[x].due);
 
-    var result = eachDayOfInterval({
-      start: startDayOfThisMonth,
-      end: lastDayOfThisMonth
-    });
-
-    //console.log(result);
-    
-    for( let y=0; y<result.length; y++){
-      let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
-      //console.log(formattedFocusDay);
-
-      for(let x = 0; x < this.player.tasks.length; x++){
-         if(this.player.tasks[x].due == formattedFocusDay){
-           tasksHolder.push(this.player.tasks[x]);
-         }
-      }//end of for loop
-
+      if(this.player.tasks[x].due == formattedFocusDay){
+        tasksHolder.push(this.player.tasks[x]);
+      }
     }
+
+
+
 
     return tasksHolder;
   }
 
-  OLDgetWeeksTask(concatDate,focusYear,focusMonth,focusDayDate){
+  getMonthsTask(){
     let tasksHolder = [];
-
-    let startDayOfThisWeek = new Date(focusYear, focusMonth, focusDayDate);
-    //let formatedStartDate = format(startDayOfThisWeek, 'yyyy-MM-dd');
-    let lastDayOfThisWeek = lastDayOfISOWeek(new Date(focusYear, focusMonth, focusDayDate));
-    //let formatedEndDate = format(lastDayOfThisWeek, 'yyyy-MM-dd');
-
+    let startDate = new Date();
+    var endDate = addDays(startDate, 30);
     var result = eachDayOfInterval({
-      start: startDayOfThisWeek,
-      end: lastDayOfThisWeek
+      start: startDate,
+      end: endDate
     });
-    //console.log(result);
+
     for( let y=0; y<result.length; y++){
       let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
      // console.log(formattedFocusDay);
@@ -306,8 +293,10 @@ export class Player  {
 
     }
 
+
     return tasksHolder;
   }
+
 
   getWeeksTask(){
     let tasksHolder = [];

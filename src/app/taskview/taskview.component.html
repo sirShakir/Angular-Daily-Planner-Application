@@ -7,7 +7,6 @@
 
 .divider{
     border-bottom-style:ridge;
-    overflow: auto;
 }
 .divMax{
     height: 100%;
@@ -118,7 +117,7 @@ input {
                   <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
                 </div>
             </div>
-            <span style="float: right;">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  
+            <span style="display: inline-block;">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  
     
             </div>
 

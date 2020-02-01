@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InboxComponent } from './inbox/inbox.component';
 import { TodayComponent } from './today/today.component';
+import { TomorrowComponent } from './tomorrow/tomorrow.component';
 import { WeekComponent } from './week/week.component';
 import { MonthComponent } from './month/month.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: '', component: LandingComponent },//load inbox component by default
   { path: 'inbox', component: InboxComponent },
   { path: 'today', component: TodayComponent },
+  { path: 'tomorrow', component: TomorrowComponent },
   { path: 'week', component: WeekComponent },
   { path: 'month', component: MonthComponent },
   { path: 'createtask/:tasktype', component: TaskcreateComponent },

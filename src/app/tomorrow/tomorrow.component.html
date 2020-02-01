@@ -1,1 +1,51 @@
-<p>tomorrow works!</p>
+<p>Tomorrows task</p>
+
+<style>
+.makeInline{
+    display: inline-block;
+}
+.divider{
+    border-bottom-style:ridge;
+
+}
+
+</style>
+
+<div *ngFor="let task of tomorrowsTasks" class="divider">
+
+  <div *ngIf="task.status == 'done'"  style="color: blue; opacity: .7;">
+
+    <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
+          <div class="dropdown makeInline" style="float: right;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{task.status}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+                  <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+                  <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+                </div>
+            </div>
+           <!-- <span style="float: right;">Due : {{task.due}} Priority : {{task.level}}</span>  -->
+  </div>
+
+  <div *ngIf="task.status == 'active'">
+
+    <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
+          <div class="dropdown makeInline" style="float: right;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{task.status}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <span class="dropdown-item" (click)="toggleSetTask(0,task)">Complete</span>
+                  <span class="dropdown-item" (click)="toggleSetTask(1,task)">Active</span>
+                  <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
+                </div>
+            </div>
+            <span style="display: inline-block;">Due : {{task.due.substring(5)}} Priority : {{task.level}}</span>  
+  </div>
+
+
+</div>
+
+

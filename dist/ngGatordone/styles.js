@@ -376,8 +376,8 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! c:\Apache24\htdocs\ngGatordone\node_modules\@angular\material\prebuilt-themes\purple-green.css */"./node_modules/@angular/material/prebuilt-themes/purple-green.css");
-module.exports = __webpack_require__(/*! c:\Apache24\htdocs\ngGatordone\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Apache24\htdocs\ngGatordone\node_modules\@angular\material\prebuilt-themes\purple-green.css */"./node_modules/@angular/material/prebuilt-themes/purple-green.css");
+module.exports = __webpack_require__(/*! C:\Apache24\htdocs\ngGatordone\src\styles.css */"./src/styles.css");
 
 
 /***/ })
