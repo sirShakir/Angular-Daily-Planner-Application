@@ -1,5 +1,4 @@
-
-<p>Monthly task</p>
+<p>Overdue Task</p>
 
 <style>
 .makeInline{
@@ -10,7 +9,7 @@
 }
 </style>
 
-<div *ngFor="let task of monthsTasks" class="divider">
+<div *ngFor="let task of overdueTasks" class="divider">
 
   <div *ngIf="task.status == 'done'"  style="color: blue; opacity: .7;">
     <div style="width:70%" class="makeInline">
@@ -34,7 +33,7 @@
 
   </div>
 
-  <div *ngIf="task.status == 'active'">
+  <div *ngIf="task.status == 'active'" style="color: #EF7B45;">
     <div style="width:70%" class="makeInline">
       <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
       <span style="display: inline-block;">Due : {{task.due.substring(5)}} Priority : {{task.level}}</span>  

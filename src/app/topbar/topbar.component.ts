@@ -25,7 +25,7 @@ export class TopbarComponent implements OnInit {
 
   async savePlayer(){
     console.log(JSON.stringify(this.player.player));
-    let url = "/playerplanner/save";
+    let url = "/tasksmanager/save";
     let userplayer = JSON.stringify(this.player.player);
 
     var xhr = new XMLHttpRequest();

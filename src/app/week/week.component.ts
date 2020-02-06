@@ -60,4 +60,17 @@ export class WeekComponent implements OnInit {
     this.player.setNavBackState("inbox","empty");
     this.router.navigate(['/viewtask', JSON.stringify(focusTask)]);
   }
+
+  taskDelete(focusEleTask){
+
+    if(focusEleTask.task == null || focusEleTask.task == undefined){
+      this.player.deleteTask(focusEleTask);
+     // console.log(focusEleTask);
+
+    }else{
+      this.player.deleteSubTask(focusEleTask);
+    }
+     this.viewWeeksTasks();
+     //console.log(this.player.player.tasks);
+   }
 }

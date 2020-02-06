@@ -1,30 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { Router } from '@angular/router';
-import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
-
 
 @Component({
-  selector: 'app-today',
-  templateUrl: './today.component.html',
-  styleUrls: ['./today.component.css']
+  selector: 'app-overdue',
+  templateUrl: './overdue.component.html',
+  styleUrls: ['./overdue.component.css']
 })
-export class TodayComponent implements OnInit {
-
+export class OverdueComponent implements OnInit {
+  overdueTasks
   constructor(private player: Player, private router: Router) { }
 
-  todaysDate
-  todaysTasks
   ngOnInit() {
-    let unformattedFocusDay = new Date();
-    this.todaysDate = format(unformattedFocusDay, 'yyyy-MM-dd');
-    this.viewTodayTasks();
-
+    this.viewOverdueTasks();
   }
 
-  viewTodayTasks(){
-    this.todaysTasks = this.player.getTodayTasks(this.todaysDate);
-    //this.todaysTasks = takshold;
+  viewOverdueTasks(){
+    this.overdueTasks = this.player.getOverdueTasks();
   }
 
   toggleSetTask(key:number, focusEleTask){
@@ -55,7 +47,7 @@ export class TodayComponent implements OnInit {
     }else{
       this.player.deleteSubTask(focusEleTask);
     }
-     this.viewTodayTasks();
+     this.viewOverdueTasks();
      //console.log(this.player.player.tasks);
    }
 }

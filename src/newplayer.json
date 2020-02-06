@@ -1,7 +1,7 @@
 {
-    "ID" : "some unique id",
-    "name" : "Carter",
-    "stamp" : "some stamp",
+    "codename" : "some unique id",
+    "pin" : "Carter",
+    "points" : 0,
     "projects" : [],
     "sections" : [],
     "tasks" : [],

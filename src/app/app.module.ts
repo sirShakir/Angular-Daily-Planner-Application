@@ -21,6 +21,8 @@ import { TodayComponent } from './today/today.component';
 import { WeekComponent } from './week/week.component';
 import { MonthComponent } from './month/month.component';
 import { TomorrowComponent } from './tomorrow/tomorrow.component';
+import { QuicktasksviewComponent } from './quicktasksview/quicktasksview.component';
+import { OverdueComponent } from './overdue/overdue.component';
 
 export function initializeApp1(player: Player) {
   return (): Promise<any> => { 
@@ -43,7 +45,9 @@ export function initializeApp1(player: Player) {
     TodayComponent,
     WeekComponent,
     MonthComponent,
-    TomorrowComponent
+    TomorrowComponent,
+    QuicktasksviewComponent,
+    OverdueComponent
   ],
   imports: [
     BrowserModule,

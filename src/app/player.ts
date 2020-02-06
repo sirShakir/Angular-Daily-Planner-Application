@@ -1,8 +1,8 @@
 import { Injectable  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
-//var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
-var url = "/playerplanner/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
+import { isFuture, isPast, format, eachDayOfInterval, parseISO, addDays } from 'date-fns';
+var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
+//var url = "/tasksmanager/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
 var valueC = getCookie("gatorc");
 var valueP = getCookie("gatorp");
 var valueBody = { "codename" : valueC, "pin": valueP};
@@ -23,7 +23,7 @@ export class Player  {
    
   }
   async loadPlayer(){
-    return await this.http.post(url,valueBody)
+    return await this.http.get(url)
     .toPromise()
     .then(
       res => { // Success
@@ -223,29 +223,107 @@ export class Player  {
 
     return newID;
   }
-
-  getInboxTasks(){ //loads all tasks with no projects for inbox view
+  getOverdueTasks(){ //loads all task/sub task in the furture.
     let inboxTaskStack = [];
-      if(this.player){
+
+    let startDate = new Date();
+
+        for(let x = 0; x< this.player.tasks.length; x++){ 
+
+          let taskDate = this.player.tasks[x].due;
+          let tempDate = parseISO(taskDate)
+          let result = isPast(tempDate);
+
+          if(this.player.tasks[x].status == "active" && result == true){
+            inboxTaskStack.push(this.player.tasks[x]);
+          }
+        }
+        // loop through all tasks in player
+
+        
+        for(let x = 0; x< this.player.subTasks.length; x++){ 
+
+          let taskDate = this.player.subTasks[x].due;
+          let tempDate = parseISO(taskDate)
+          let result = isPast(tempDate);
+
+          if(this.player.subTasks[x].status == "active" && result == true){
+            inboxTaskStack.push(this.player.subTasks[x]);
+          }
+        }
+    
+    
+    return inboxTaskStack;
+  }
+
+  getInboxTasks(){ //loads all task/sub task in the furture.
+    let inboxTaskStack = [];
+
+    let startDate = new Date();
+    let formattedstartDate = format(startDate, 'yyyy-MM-dd');
+
+        for(let x = 0; x< this.player.tasks.length; x++){ 
+
+          let taskDate = this.player.tasks[x].due;
+          let tempDate = parseISO(taskDate)
+          let result = isFuture(tempDate);
+
+          if(this.player.tasks[x].due == formattedstartDate || result == true){
+            inboxTaskStack.push(this.player.tasks[x]);
+          }
+        }
+        // loop through all tasks in player
+
+        
+        for(let x = 0; x< this.player.subTasks.length; x++){ 
+
+          let taskDate = this.player.subTasks[x].due;
+          let tempDate = parseISO(taskDate)
+          let result = isFuture(tempDate);
+
+          if(this.player.subTasks[x].due == formattedstartDate || result == true){
+            inboxTaskStack.push(this.player.subTasks[x]);
+          }
+        }
+    
+    
+    return inboxTaskStack;
+  }
+
+  getQuickTasks(){ //loads all quick tasks found
+    let inboxTaskStack = [];
+
         for(let x = 0; x< this.player.tasks.length; x++){ 
           if(this.player.tasks[x].project == undefined || this.player.tasks[x].project == null){
             inboxTaskStack.push(this.player.tasks[x]);
+            //console.log(this.player.tasks[x])
           }
         }// loop through all tasks in player
-    }
+
+
+    
     
     return inboxTaskStack;
   }
 
   getTodayTasks(focusDate){
     let tasksHolder = [];
-
+    //Loop for Tasks
     for(let x = 0; x < this.player.tasks.length; x++){
       // console.log(focusDate);
       // console.log(this.player.tasks[x].due);
 
       if(this.player.tasks[x].due == focusDate){
         tasksHolder.push(this.player.tasks[x]);
+      }
+    }
+    //Loop for SubTaks
+    for(let x = 0; x < this.player.subTasks.length; x++){
+      // console.log(focusDate);
+      // console.log(this.player.tasks[x].due);
+
+      if(this.player.subTasks[x].due == focusDate){
+        tasksHolder.push(this.player.subTasks[x]);
       }
     }
     return tasksHolder;
@@ -263,6 +341,15 @@ export class Player  {
 
       if(this.player.tasks[x].due == formattedFocusDay){
         tasksHolder.push(this.player.tasks[x]);
+      }
+    }
+
+    for(let x = 0; x < this.player.subTasks.length; x++){
+      // console.log(focusDate);
+      // console.log(this.player.tasks[x].due);
+
+      if(this.player.subTasks[x].due == formattedFocusDay){
+        tasksHolder.push(this.player.subTasks[x]);
       }
     }
 
@@ -293,6 +380,18 @@ export class Player  {
 
     }
 
+    for( let y=0; y<result.length; y++){
+      let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
+     // console.log(formattedFocusDay);
+
+      for(let x = 0; x < this.player.subTasks.length; x++){
+         if(this.player.subTasks[x].due == formattedFocusDay){
+           tasksHolder.push(this.player.subTasks[x]);
+         }
+      }//end of for loop
+
+    }
+
 
     return tasksHolder;
   }
@@ -318,7 +417,17 @@ export class Player  {
       }//end of for loop
 
     }
+    for( let y=0; y<result.length; y++){
+      let formattedFocusDay = format(result[y], 'yyyy-MM-dd');
+     // console.log(formattedFocusDay);
 
+      for(let x = 0; x < this.player.subTasks.length; x++){
+         if(this.player.subTasks[x].due == formattedFocusDay){
+           tasksHolder.push(this.player.subTasks[x]);
+         }
+      }//end of for loop
+
+    }
 
     return tasksHolder;
   }

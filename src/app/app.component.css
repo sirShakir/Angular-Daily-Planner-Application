@@ -1,4 +1,6 @@
-
+mat-sidenav-container{
+    height: 99%;
+}
 
 #topbarContainer{
     
@@ -10,7 +12,7 @@
 }
 
 #sidebar {
-    height: 100vh;
+    height: 100%;
     border-color: #170DBF;
     border-style: solid;
     border-radius: 5px;

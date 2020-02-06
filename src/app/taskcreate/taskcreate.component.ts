@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { ActivatedRoute, Params , Router} from '@angular/router';
+import { format, eachDayOfInterval, lastDayOfISOWeek, lastDayOfMonth, addDays } from 'date-fns';
 
 @Component({
   selector: 'app-taskcreate',
@@ -9,15 +10,32 @@ import { ActivatedRoute, Params , Router} from '@angular/router';
 })
 export class TaskcreateComponent implements OnInit{
   focustype
+  currentDate
+  pageTitle
   constructor( private player: Player, private route: ActivatedRoute,  private router: Router) { 
    //console.log(this.player)
   }
 
   ngOnInit() {
+    let unformattedFocusDay = new Date();
+    this.currentDate = format(unformattedFocusDay, 'yyyy-MM-dd');
 
+    
     this.route.params.forEach((params: Params) => {
       // either make a quick task or use project id from params
     this.focustype = JSON.parse(params.tasktype);
+
+    if(this.focustype.typeID == 3){
+      this.pageTitle = "Create a Sub Task";
+    }
+    else 
+    if(this.focustype.typeID == 0)
+    {
+      this.pageTitle = "Create a Quick Task";
+    }
+    else{
+      this.pageTitle = "Create a Task";
+    }
     
   });
 }

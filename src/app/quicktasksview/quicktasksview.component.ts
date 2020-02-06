@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.css']
+  selector: 'app-quicktasksview',
+  templateUrl: './quicktasksview.component.html',
+  styleUrls: ['./quicktasksview.component.css']
 })
-export class InboxComponent implements OnInit {
- 
-  futureTasks
-  constructor(private player: Player, private router: Router) { 
-      
-  }
+export class QuicktasksviewComponent implements OnInit {
+  quickTasks
+  constructor(private player: Player, private router: Router) { }
 
   ngOnInit() {
-    this.viewInboxTasks();
+    this.viewQuickTasks();
+
   }
-  viewInboxTasks(){
-    let focus = this.player.getInboxTasks();
-    this.futureTasks = focus;
+
+  viewQuickTasks(){
+    let focus = this.player.getQuickTasks();
+    this.quickTasks = focus;
     //console.log(this.quickTasks);
   }
   viewClickedTask(focusTask){
@@ -37,7 +35,7 @@ export class InboxComponent implements OnInit {
     }else{
       this.player.deleteSubTask(focusEleTask);
     }
-     this.viewInboxTasks();
+     this.viewQuickTasks();
      //console.log(this.player.player.tasks);
    }
 
@@ -53,4 +51,5 @@ export class InboxComponent implements OnInit {
         break;
     }
    }
+
 }

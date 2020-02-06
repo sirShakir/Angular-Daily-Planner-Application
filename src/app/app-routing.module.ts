@@ -13,6 +13,8 @@ import { ProjectviewComponent } from './projectview/projectview.component';
 
 import { LandingComponent } from './landing/landing.component';
 import { TaskviewComponent } from './taskview/taskview.component';
+import { QuicktasksviewComponent } from './quicktasksview/quicktasksview.component';
+import { OverdueComponent } from './overdue/overdue.component';
 
 
 const routes: Routes = [
@@ -22,11 +24,13 @@ const routes: Routes = [
   { path: 'tomorrow', component: TomorrowComponent },
   { path: 'week', component: WeekComponent },
   { path: 'month', component: MonthComponent },
+  { path: 'overdue', component: OverdueComponent },
   { path: 'createtask/:tasktype', component: TaskcreateComponent },
   { path: 'createproject', component: ProjectcreateComponent },
   { path: 'viewtask/:task', component: TaskviewComponent },
   { path: 'viewproject/:project', component: ProjectviewComponent },
-  { path: 'viewprojects', component: ProjectsviewComponent }
+  { path: 'viewprojects', component: ProjectsviewComponent },
+  { path: 'quicktasksview', component: QuicktasksviewComponent },
 
 ];
 

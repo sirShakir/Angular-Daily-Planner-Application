@@ -107,9 +107,13 @@
     <div *ngIf="task.section == section.ID" class="divider">
 
       <div *ngIf="task.status == 'done'"  style="color: blue; opacity: .7;">
+        <div style="width:70%" class="makeInline">
+         <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
 
-        <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
-        <div class="dropdown makeInline" style="float: right;">
+        </div>
+        
+        <div style="width:30%" class="makeInline">
+                 <div class="dropdown makeInline" style="float: right;">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               
             </button>
@@ -119,13 +123,20 @@
               <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
             </div>
         </div>
+        </div>
+
  
       </div>
 
       <div *ngIf="task.status == 'active'" >
+        <div style="width:70%" class="makeInline">
+         <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
+        <span style="display: inline-block;">Due : {{task.due}} Priority : {{task.level}}</span>  
 
-        <h4 style="display:inline-block;" (click)="viewClickedTask(task)" >{{task.name}}</h4>
-        <div class="dropdown makeInline" style="float: right;">
+        </div>
+        
+        <div style="width:30%" class="makeInline">
+                <div class="dropdown makeInline" style="float: right;">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               
             </button>
@@ -135,7 +146,8 @@
               <span class="dropdown-item" (click)="taskDelete(task)">Delete</span>
             </div>
         </div>
-        <span style="display: inline-block;">Due : {{task.due}} Priority : {{task.level}}</span>  
+        </div>
+ 
       </div>
 
     </div>
@@ -143,3 +155,4 @@
   </div>
 
 </div>
+

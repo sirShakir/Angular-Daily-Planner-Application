@@ -89,37 +89,49 @@ input {
 
 
         <div *ngIf="subTask.status == 'done'"  style="color: blue; opacity: .7;">
+            <div style="width:70%" class="makeInline">
+                <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
 
-        <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
-        <div class="dropdown makeInline" style="float: right;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Set
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
-                <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
-              <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
             </div>
-        </div>
+            
+            <div style="width:30%" class="makeInline">
+                            <div class="dropdown makeInline" style="float: right;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
+                        <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
+                    <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
         <div *ngIf="subTask.status == 'active'" >
+            <div style="width:70%" class="makeInline">
+             <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
+            <span style="display: inline-block;">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  
 
-            <h4 style="display:inline-block;" (click)="viewClickedSubTask(subTask)">{{subTask.name}}</h4>
-            <div class="dropdown makeInline" style="float: right;">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Set
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
-                    <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
-                  <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
+            </div>
+            
+            <div style="width:30%" class="makeInline">
+                <div class="dropdown makeInline" style="float: right;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <span class="dropdown-item" (click)="toggleSetSubTask(0,subTask)">Complete</span>
+                        <span class="dropdown-item" (click)="toggleSetSubTask(1,subTask)">Active</span>
+                      <span class="dropdown-item" (click)="subTaskDeleteDropdown(subTask)">Delete</span>
+                    </div>
                 </div>
             </div>
-            <span style="display: inline-block;">Due : {{subTask.due}} Priority : {{subTask.level}}</span>  
+
     
-            </div>
+        </div>
 
 
     </div>

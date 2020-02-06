@@ -61,4 +61,17 @@ export class MonthComponent implements OnInit {
     this.router.navigate(['/viewtask', JSON.stringify(focusTask)]);
   }
 
+  taskDelete(focusEleTask){
+
+    if(focusEleTask.task == null || focusEleTask.task == undefined){
+      this.player.deleteTask(focusEleTask);
+      //console.log(focusEleTask);
+
+    }else{
+      this.player.deleteSubTask(focusEleTask);
+    }
+     this.viewMonthsTasks();
+     //console.log(this.player.player.tasks);
+   }
+
 }

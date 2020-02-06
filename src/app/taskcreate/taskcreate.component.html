@@ -1,8 +1,9 @@
-<p>Create a quick Task</p>
-<label>Task Name:</label>
-<input type="text" id="taskName" value="title"><br>
+<p>{{pageTitle}}</p>
+
+<input type="text" id="taskName" value="task name"><br>
 <input type="text" id="description" value="description"><br>
-<input type="date" id="duedate" value=""><br>
+<input type="date" id="duedate" value="{{currentDate}}"><br>
+
 <button type="button" class="btn btn-primary" (click)="createTask()">Create</button>
 
 
