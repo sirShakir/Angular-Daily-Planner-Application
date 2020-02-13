@@ -2,7 +2,7 @@ import { Injectable  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { isFuture, isPast, format, eachDayOfInterval, parseISO, addDays } from 'date-fns';
 var url = "http://localhost:8080/ngGatordone/src/player.json";//"http://localhost/ngMovingProject/src/player.json";
-//var url = "/tasksmanager/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
+//var url = "/taskit/load"; //player.json";//"http://localhost/ngMovingProject/src/player.json";
 var valueC = getCookie("gatorc");
 var valueP = getCookie("gatorp");
 var valueBody = { "codename" : valueC, "pin": valueP};

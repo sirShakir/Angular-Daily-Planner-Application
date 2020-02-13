@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-
+import Swal from 'sweetalert2';
 import { Player } from '../player';
 import { Router } from '@angular/router';
 @Component({
@@ -25,7 +25,7 @@ export class TopbarComponent implements OnInit {
 
   async savePlayer(){
     console.log(JSON.stringify(this.player.player));
-    let url = "/tasksmanager/save";
+    let url = "/taskit/save";
     let userplayer = JSON.stringify(this.player.player);
 
     var xhr = new XMLHttpRequest();
@@ -35,6 +35,10 @@ export class TopbarComponent implements OnInit {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = xhr.responseText;
             //console.log(json);
+            Swal.fire({
+              icon: 'success',
+              text: 'TaskIt Saved',
+            })
         }
     };
     var data = userplayer
